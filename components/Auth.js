@@ -18,9 +18,9 @@ export default function Auth() {
       </div>
       <div className="flex items-center justify-center">
         <div className="text-sm">
-          <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-            Forgot your password?
-          </a>
+          <span className="cursor-pointer font-medium text-indigo-600 hover:text-indigo-500">
+            Change mode?
+          </span>
         </div>
       </div>
       <div>
