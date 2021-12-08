@@ -1,4 +1,29 @@
+import { useState } from "react";
+import { useRouter } from "next/router";
+import Cookie from "universal-cookie";
+
+const cookie = new Cookie();
+
+
 export default function Auth() {
+    const router = useRouter();
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [isLogin, setIsLogin] = useState(ture);
+
+    const login = async () => {
+        await fetch(
+            `${process.env.NEXT_PUBLIC_RESTAPI_URL}api/auth/jwt/create/`,
+            {
+                method: "POST",
+                body: JSON.stringify({ username: username, password: password}),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }
+        )
+    }
+
     return <div className="max-w-md w-full space-y-8">
     <div>
       <img className="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow" />
