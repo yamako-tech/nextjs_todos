@@ -9,7 +9,7 @@ export default function Auth() {
     const router = useRouter();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [isLogin, setIsLogin] = useState(ture);
+    const [isLogin, setIsLogin] = useState(true);
 
     const login = async () => {
       try{
