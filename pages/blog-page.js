@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function BlogPage() {
     <Layout title="Blog Page">
-        <Link href="/main-page">
+        <Link href="/main-page" passHref>
             <div className="flex cursor-pointer mt-12">
             <svg 
             xmlns="http://www.w3.org/2000/svg" 
