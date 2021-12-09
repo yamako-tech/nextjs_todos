@@ -15,6 +15,14 @@ export default function MainPage() {
         <Layout title="Main Page">
             <div className="mb-10">
                 <Link href="/blog-page" passHref>
+                    <a classname="bg-indigo-500 mr-8 hover:bg-indigo-600 text-white px-4 py-12 rounded">
+                        Visit Blog by SSG + ISR
+                    </a>
+                </Link>
+                <Link href="/todo-page" passHref>
+                    <a classname="bg-yellow-500 mr-8 hover:bg-yellow-600 text-white px-4 py-12 rounded">
+                        Visit Todo by SSG + ISR
+                    </a>
                 </Link>
             </div>
             <svg 

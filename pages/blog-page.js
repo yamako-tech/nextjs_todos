@@ -2,6 +2,7 @@ import Layout from "../components/Layout";
 import Link from "next/link";
 
 export default function BlogPage() {
+    return (
     <Layout title="Blog Page">
         <Link href="/main-page" passHref>
             <div className="flex cursor-pointer mt-12">
@@ -21,4 +22,5 @@ export default function BlogPage() {
             </div>
         </Link>
     </Layout>
+    );
 }
