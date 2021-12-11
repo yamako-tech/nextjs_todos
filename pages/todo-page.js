@@ -1,9 +1,15 @@
 import Layout from "../components/Layout";
 import Link from "next/link";
+import { getAllTodoData } from "../lib/todos";
+import Todo from "../components/Todo";
 
-export default function TodoPage() {
+export default function TodoPage({ staticfilterdTodos }) {
     return (
     <Layout title="Todo Page">
+        <ul>
+            { staticfilterdTodos &&
+            staticfilterdTodos.map((todo) => <Todo key={todo.id} todo={todo} />)}
+        </ul>
         <Link href="/main-page" passHref>
             <div className="flex cursor-pointer mt-12">
             <svg 
@@ -23,4 +29,12 @@ export default function TodoPage() {
         </Link>
     </Layout>
     );
+}
+
+export async function getStaticProps() {
+    const staticfilterdTodos = await getAllTodoData();
+
+    return {
+        props: { staticfilterdTodos },
+    }
 }
