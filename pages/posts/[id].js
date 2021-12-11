@@ -26,3 +26,20 @@ export default function Post({ post }) {
         </Layout>
     )
 }
+
+export async function getStaticPaths() {
+    const paths = await getAllPostIds();
+
+    return {
+        paths,
+        fallback: false,
+    };
+}
+export async function getStaticProps({ params }) {
+    const { post: post} = await getPostData(params.id);
+    return {
+        props: {
+            post,
+        },
+    };
+}
