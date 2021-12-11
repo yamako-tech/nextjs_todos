@@ -3,12 +3,12 @@ import Link from "next/link";
 import { getAllTodoData } from "../lib/todos";
 import Todo from "../components/Todo";
 
-export default function TodoPage({ staticfilterdTodos }) {
+export default function TodoPage({ filterdTodos }) {
     return (
     <Layout title="Todo Page">
         <ul>
-            { staticfilterdTodos &&
-            staticfilterdTodos.map((todo) => <Todo key={todo.id} todo={todo} />)}
+            { filterdTodos &&
+            filterdTodos.map((todo) => <Todo key={todo.id} todo={todo} />)}
         </ul>
         <Link href="/main-page" passHref>
             <div className="flex cursor-pointer mt-12">
@@ -32,9 +32,9 @@ export default function TodoPage({ staticfilterdTodos }) {
 }
 
 export async function getStaticProps() {
-    const staticfilterdTodos = await getAllTodoData();
+    const filterdTodos = await getAllTodoData();
 
     return {
-        props: { staticfilterdTodos },
+        props: { filterdTodos },
     }
 }
