@@ -5,7 +5,7 @@ export default function Post({ post }) {
         <div>
             <span>{post.id}</span>
             {" : "}
-            <Link href={`/posts/${post.id}`}>
+            <Link href={`/posts/${post.id}`} passHref>
             <span className="cursor-pointer text-indigo-700 border-b border-pink-200 hover:bg-blue-400 ">
                 {post.title}
             </span>

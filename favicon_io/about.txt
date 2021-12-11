@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Averia Sans Libre
+- Font Author: Copyright (c) 2011, Dan Sayers (i@iotic.com), with Reserved Font Name 'Averia' and 'Averia Libre'.
+- Font Source: http://fonts.gstatic.com/s/averiasanslibre/v11/ga6XaxZG_G5OvCf_rt7FH3B6BHLMEeVJGIMYDo_8.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
