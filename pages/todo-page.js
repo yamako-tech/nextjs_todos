@@ -8,7 +8,7 @@ export default function TodoPage({ filterdTodos }) {
     <Layout title="Todo Page">
         <ul>
             { filterdTodos &&
-            filterdTodos.map((todo) => <Todo key={todo.id} todo={todo} />)}
+            filterdTodos.map((todo) => (<Todo key={todo.id} todo={todo} />))}
         </ul>
         <Link href="/main-page" passHref>
             <div className="flex cursor-pointer mt-12">
