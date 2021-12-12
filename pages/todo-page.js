@@ -24,7 +24,7 @@ export default function TodoPage({ filterdTodos }) {
     <Layout title="Todo Page">
         <ul>
             { filterdTodos2 &&
-            filterdTodos2.map((todo) => (<Todo key={todo.id} todo={todo} />))}
+            filterdTodos2.map((todo) => (<Todo key={todo.id} todo={todo} todoDeleted={mutate} />))}
         </ul>
         <Link href="/main-page" passHref>
             <div className="flex cursor-pointer mt-12">
