@@ -1,14 +1,30 @@
+import { useEffect  } from "react";
 import Layout from "../components/Layout";
 import Link from "next/link";
 import { getAllTodoData } from "../lib/todos";
 import Todo from "../components/Todo";
+import useSWR from "swr";
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
+const apiurl = `${process.env.NEXT_PUBLIC_RESTAPI_URL}api/todo-list`;
 
 export default function TodoPage({ filterdTodos }) {
+
+    const { data: todos, mutate } = useSWR( apiurl, fetcher, {
+        fallbackData: filterdTodos,
+    });
+
+    const filterdTodos2 = todos?.sort(
+        (a,b) => new Date(b.created) - new Date(a.created)
+    );
+    useEffect(() => {
+        mutate();
+    }, []);
     return (
     <Layout title="Todo Page">
         <ul>
-            { filterdTodos &&
-            filterdTodos.map((todo) => (<Todo key={todo.id} todo={todo} />))}
+            { filterdTodos2 &&
+            filterdTodos2.map((todo) => (<Todo key={todo.id} todo={todo} />))}
         </ul>
         <Link href="/main-page" passHref>
             <div className="flex cursor-pointer mt-12">
@@ -36,5 +52,6 @@ export async function getStaticProps() {
 
     return {
         props: { filterdTodos },
-    }
+        revalidate: 3,
+    };
 }
