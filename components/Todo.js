@@ -31,7 +31,7 @@ export default function Todo({ todo, todoDeleted }) {
             </Link>
             <div className="float-right ml-20">
             <svg 
-                onClick={() => setSlelectedTodo(todo)}
+                onClick={() => setSelectedTodo(todo)}
                 xmlns="http://www.w3.org/2000/svg" 
                 className="h-6 w-6 float-left cursor-pointer" 
                 fill="none" 
