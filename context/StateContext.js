@@ -7,7 +7,7 @@ export default function StateContextProvider(props) {
     return (
         <StateContext.Provider 
             value ={{
-                selectTodo,
+                selecedtTodo,
                 setSelectedTodo,
             }}
             >
