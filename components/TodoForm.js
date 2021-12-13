@@ -36,5 +36,11 @@ const update = async (e) => {
                 Authorization: `JWT ${cookie.get("access_token")}`,
             },
         }
-    );
+    ).then((res) => {
+        if (res.status === 401) {
+            alert("JWT Token not valid");
+        }
+    });
+    setSelectedTodo({ id: 0, title: ""});
+    todoCreated();
 };
