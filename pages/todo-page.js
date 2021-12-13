@@ -5,6 +5,7 @@ import { getAllTodoData } from "../lib/todos";
 import Todo from "../components/Todo";
 import useSWR from "swr";
 import StateContextProvider from "../context/StateContext";
+import TodoForm from "../components/TodoForm";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 const apiurl = `${process.env.NEXT_PUBLIC_RESTAPI_URL}api/todo-list`;
@@ -24,6 +25,7 @@ export default function TodoPage({ filterdTodos }) {
     return (
     <StateContextProvider>
         <Layout title="Todo Page">
+            <TodoForm todoCreated={mutate} />
             <ul>
                 { filterdTodos2 &&
                 filterdTodos2.map((todo) => (<Todo key={todo.id} todo={todo} todoDeleted={mutate} />))}

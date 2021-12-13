@@ -9,7 +9,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Post({ staticTodo, id }) {
     const router = useRouter();
-    const { data: task, mutate } = useSWR(
+    const { data: todo, mutate } = useSWR(
         `${process.env.NEXT_PUBLIC_RESTFUL_URL}api/todo-detail/${id}`,
         fetcher,
         {
